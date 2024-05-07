@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+body {
+    background: radial-gradient(circle, rgba(34, 193, 195, 1) 0%, rgba(244, 167, 4, 1) 100%);
+}
+
+.conteiner_1 {
+    font-size: 90px;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    top: 300px;
+} 
+
+.conteiner_11 {
+    display: none;
+}
+
+input[type = number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.open {
+    height: 40px;
+    width: 60px;
+    position: relative;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+}
+
+.main_1_button_start_stop {
+    display: inline;
+    position: absolute;
+    text-align: center;
+    top: 50px;
+    align-items: center;
+    left: 615px;
+}
+
+.main_1 {
+    display: inline-flex;
+    gap: 16px;
+    
+}
+
+.main_1 span {
+    position: relative;
+    bottom: 8px;
+}
+
+.main_1 div,
+.main_1 span {
+    position: relative;
+    left: 35px;    
+}
+
+.start,
+.stop {
+    width: 170px;
+    left: 18px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.Close {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    left: 110px;
+    bottom: 70px;
+    cursor: pointer;
+}
+
+.conteiner_2 {
+    position: relative;
+    padding-top: 300px;
+}
+
+.conteiner_22 {
+    display: none;
+}
+
+
+.main_2_AddTimes {
+   text-align: center;
+   position: relative;
+   top: 40%;
+
+}
+
+.main_2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 20%;
+}
+
+.conteiner_2_main_2 {
+    position: relative;
+    background-color: rgba(0, 0, 255, 0.7);
+    backdrop-filter: blur(20px);
+    box-shadow: rgba(0, 0, 0, 0.65) 5px 8px 15px;
+    width: 900px;
+    height: 300px;
+    left: 350px; 
+    border-radius: 26px;
+}
+
+
+.main_2 input,
+.main_2 span {
+    outline: none;
+    width: 180px;
+    padding: 5px;
+    font-size: 60px;
+    border-radius: 26px;
+}
+
+.input3,
+.input2 {
+    margin-left: 4px;
+}   
+
+.AddTimes {
+    width: 160px;
+    height: 60px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
