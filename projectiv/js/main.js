@@ -23,25 +23,25 @@ Close.addEventListener('click', ()=> {
 const AddTimes = document.querySelector('.AddTimes') //button
 
 //1
-const wd_timer = document.querySelector('.wd_timer')
 const wh_timer = document.querySelector('.wh_timer')
+const wm_timer = document.querySelector('.wm_timer')
 const ws_timer = document.querySelector('.ws_timer')
 
 //2
-const wd_timerr = document.querySelector('.wd_timerr')
 const wh_timerr = document.querySelector('.wh_timerr')
+const wm_timerr = document.querySelector('.wm_timerr')
 const ws_timerr = document.querySelector('.ws_timerr')
 
 
 
 
 AddTimes.addEventListener('click', () => {
-   const wd_timerrs = wd_timerr.value
    const wh_timerrs = wh_timerr.value
+   const wm_timerrs = wm_timerr.value
    const ws_timerrs = ws_timerr.value
 
-   wd_timer.innerText = wd_timerrs 
    wh_timer.innerText = wh_timerrs 
+   wm_timer.innerText = wm_timerrs 
    ws_timer.innerText = ws_timerrs
 
    conteiner_1.classList.remove('conteiner_11')
@@ -50,11 +50,11 @@ AddTimes.addEventListener('click', () => {
    if(ws_timerr.value === '') {
     ws_timer.innerText = '00'
    } 
-   if(wd_timerr.value === '') {
-    wd_timer.innerText = '00'
-   } 
-    if(wh_timerr.value === '') {
+   if(wm_timerr.value === '') {
     wh_timer.innerText = '00'
+   } 
+    if(wm_timerr.value === '') {
+    wm_timer.innerText = '00'
    }
    
 
@@ -90,37 +90,47 @@ function timer() {
     if(ws_timer.innerText != '0'){
         ws_timer.innerText--
     } 
-    if(ws_timer.innerText == '0' && wh_timer.innerText <= '00') {
+    if(ws_timer.innerText == '0' && wm_timer.innerText <= '00') {
         ws_timer.innerText = 60
-        wh_timer.innerText = 60
+        wm_timer.innerText = 60
         
     }
-    if(wh_timer.innerText != '0' && ws_timer.innerText == '0' ){
+    if(wm_timer.innerText != '0' && ws_timer.innerText == '0' ){
         ws_timer.innerText = 60
+        wm_timer.innerText--
+    }
+    if(wm_timer.innerText == '0' && wh_timer.innerText <= '00') {
+        wh_timer.innerText = 25
+        wm_timer.innerText = 60
+    } 
+    if(wh_timer.innerText != '0' && wm_timer.innerText == '0') {
+        wm_timer.innerText = 60
         wh_timer.innerText--
     }
-    if(wh_timer.innerText == '0' && wd_timer.innerText <= '00') {
-        wd_timer.innerText = 25
-        wh_timer.innerText = 60
-    } 
-    if(wd_timer.innerText != '0' && wh_timer.innerText == '0') {
-        wh_timer.innerText = 60
-        wd_timer.innerText--
-    }
     proverca()
+    pr()
 } 
  
 function proverca() {
     if(ws_timer.innerText < 10) {
         ws_timer.innerText = '0' + ws_timer.innerText
     }
-    if(wh_timer.innerText < 10 && ws_timer.innerText >= 60) {
-        wh_timer.innerText = '0' + wh_timer.innerText
+    if(wm_timer.innerText < 10 && ws_timer.innerText >= 60) {
+        wm_timer.innerText = '0' + wm_timer.innerText
     }
-    if(wd_timer.innerText < 10 && wh_timer.innerText >= 60 && ws_timer.innerText >= 60) {
-        wd_timer.innerText = '0' + wd_timer.innerText
+    if(wh_timer.innerText < 10 && wm_timer.innerText >= 60 && ws_timer.innerText >= 60) {
+        wh_timer.innerText = '0' + wh_timer.innerText
     }
 }
 
-
-
+function pr() {
+    if(ws_timer.innerText < '00') {
+        ws_timer.innerText = '00'
+    }
+    if(wm_timer.innerText < '00') {
+        wm_timer.innerText = '00'
+    }
+    if(wh_timer.innerText < '00') {
+        wh_timer.innerText = '00'
+    }
+}
