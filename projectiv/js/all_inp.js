@@ -16,3 +16,4 @@ all_inpute3.oninput = function() {
     this.value = this.value.substr(0, 2)
 }
 
+const all_timer = document.querySelectorAll('.input_all')

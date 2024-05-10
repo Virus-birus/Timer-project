@@ -47,13 +47,80 @@ AddTimes.addEventListener('click', () => {
    conteiner_1.classList.remove('conteiner_11')
    conteiner_2.classList.add('conteiner_22')
     
-   if(wd_timerr.value === '' && wh_timerr.value === '' && ws_timerr.value === '') {
-    wd_timer.innerText = '00'
-    wh_timer.innerText = '00'
+   if(ws_timerr.value === '') {
     ws_timer.innerText = '00'
+   } 
+   if(wd_timerr.value === '') {
+    wd_timer.innerText = '00'
+   } 
+    if(wh_timerr.value === '') {
+    wh_timer.innerText = '00'
    }
+   
 
 })
 
+
+const start = document.querySelector('.start')
+
+let iii
+//button start
+start.addEventListener('click', () => {
+    if(iii = undefined || ws_timer.innerText > '0') {
+      iii = setInterval(timer, 1000)
+       
+    }
+})
+
+const input_alls = document.querySelectorAll('input_all')
+const stopp = document.querySelector('.stop')
+
+
+
+stopp.addEventListener('click', () => {
+    stopinterval()
+})
  
+function stopinterval() {
+    clearInterval(iii)
+}
+
+
+function timer() {
+    if(ws_timer.innerText != '0'){
+        ws_timer.innerText--
+    } 
+    if(ws_timer.innerText == '0' && wh_timer.innerText <= '00') {
+        ws_timer.innerText = 60
+        wh_timer.innerText = 60
+        
+    }
+    if(wh_timer.innerText != '0' && ws_timer.innerText == '0' ){
+        ws_timer.innerText = 60
+        wh_timer.innerText--
+    }
+    if(wh_timer.innerText == '0' && wd_timer.innerText <= '00') {
+        wd_timer.innerText = 25
+        wh_timer.innerText = 60
+    } 
+    if(wd_timer.innerText != '0' && wh_timer.innerText == '0') {
+        wh_timer.innerText = 60
+        wd_timer.innerText--
+    }
+    proverca()
+} 
+ 
+function proverca() {
+    if(ws_timer.innerText < 10) {
+        ws_timer.innerText = '0' + ws_timer.innerText
+    }
+    if(wh_timer.innerText < 10 && ws_timer.innerText >= 60) {
+        wh_timer.innerText = '0' + wh_timer.innerText
+    }
+    if(wd_timer.innerText < 10 && wh_timer.innerText >= 60 && ws_timer.innerText >= 60) {
+        wd_timer.innerText = '0' + wd_timer.innerText
+    }
+}
+
+
 
